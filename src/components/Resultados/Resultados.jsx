@@ -23,7 +23,7 @@ export default function Resultados({
               <p>/ person</p>
             </div>
             <h3>
-              $<span id="tip-amount">{tipAmount}</span>
+              $<span id="tip-amount">{tipAmount.toFixed(2)}</span>
             </h3>
           </div>
           <div class="total-amount">
@@ -32,7 +32,7 @@ export default function Resultados({
               <p>/ person</p>
             </div>
             <h3>
-              $<span id="total">{totalAmount}</span>
+              $<span id="total">{totalAmount.toFixed(2)}</span>
             </h3>
           </div>
         </div>
