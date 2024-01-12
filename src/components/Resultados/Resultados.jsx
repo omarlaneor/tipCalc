@@ -1,10 +1,17 @@
 import React from "react";
 import "../Resultados/Resultados.css";
 
-export default function Resultados({ billAmount, onReset }) {
-  const botonPorcentaje = 0;
-  const tipAmount = (parseFloat(billAmount) * botonPorcentaje) / 100;
-  const totalAmount = parseFloat(billAmount) + tipAmount;
+export default function Resultados({
+  billAmount,
+  onReset,
+  botonPorcentaje,
+  people,
+}) {
+  const tipAmount = (parseFloat(billAmount) * botonPorcentaje) / 100 / people;
+  const totalAmount =
+    (parseFloat(billAmount) +
+      (parseFloat(billAmount) * botonPorcentaje) / 100) /
+    people;
 
   return (
     <div>
@@ -16,7 +23,7 @@ export default function Resultados({ billAmount, onReset }) {
               <p>/ person</p>
             </div>
             <h3>
-              $<span id="tip-amount">{tipAmount.toFixed(2)}</span>
+              $<span id="tip-amount">{tipAmount}</span>
             </h3>
           </div>
           <div class="total-amount">
@@ -25,7 +32,7 @@ export default function Resultados({ billAmount, onReset }) {
               <p>/ person</p>
             </div>
             <h3>
-              $<span id="total">{totalAmount.toFixed(2)}</span>
+              $<span id="total">{totalAmount}</span>
             </h3>
           </div>
         </div>

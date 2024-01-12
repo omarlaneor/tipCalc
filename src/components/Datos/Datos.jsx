@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Resultados from "../Resultados/Resultados";
 import "../Datos/Datos.css";
 
-export default function Datos({ billAmount, cambio }) {
+export default function Datos({ billAmount, cambio, onPorcentajeChange }) {
   const [customPercentage, setCustomPercentage] = useState("");
-  const [botonPorcentaje, setPorcentaje] = useState(0);
   const [people, setPeople] = useState(1);
 
   const cambioManualLocal = (e) => {
@@ -12,11 +12,19 @@ export default function Datos({ billAmount, cambio }) {
   };
 
   const botonClic = (percentage) => {
-    setPorcentaje(percentage);
+    onPorcentajeChange(percentage);
+    aplicarPorcentaje(percentage);
+  };
+
+  const aplicarPorcentaje = (percentage) => {
+    const cuentaPorcentaje = billAmount;
+    cambio(cuentaPorcentaje);
   };
 
   const customBox = (e) => {
-    setCustomPercentage(e.target.value);
+    const customPercentageValue = e.target.value;
+    setCustomPercentage(customPercentageValue);
+    aplicarPorcentaje(customPercentageValue);
   };
 
   const handlePeopleChange = (e) => {
