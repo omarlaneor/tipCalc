@@ -7,7 +7,7 @@ export default function Datos({ billAmount, cambio, cambioPorcentaje }) {
   const [people, setPeople] = useState(1);
 
   const cambioManualLocal = (e) => {
-    const value = e.target.value;
+    const value = e.target.value || "0";
     cambio(value);
   };
 
