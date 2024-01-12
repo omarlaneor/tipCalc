@@ -35,7 +35,7 @@ function App() {
           billAmount={billAmount}
           cambio={cambioManual}
           people={people}
-          onPorcentajeChange={handlePorcentaje}
+          cambioPorcentaje={handlePorcentaje}
         />
         <Resultados
           billAmount={billAmount}

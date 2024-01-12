@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Resultados from "../Resultados/Resultados";
 import "../Datos/Datos.css";
 
-export default function Datos({ billAmount, cambio, onPorcentajeChange }) {
+export default function Datos({ billAmount, cambio, cambioPorcentaje }) {
   const [customPercentage, setCustomPercentage] = useState("");
   const [people, setPeople] = useState(1);
 
@@ -12,7 +12,7 @@ export default function Datos({ billAmount, cambio, onPorcentajeChange }) {
   };
 
   const botonClic = (percentage) => {
-    onPorcentajeChange(percentage);
+    cambioPorcentaje(percentage);
     aplicarPorcentaje(percentage);
   };
 
